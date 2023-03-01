@@ -1,0 +1,51 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m,n;
+    cin>>m>>n;
+    int a[m],b[n];
+    int c[n];
+    int i,j;
+    for(i=0;i<m;i++)
+    {
+        cin>>a[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        cin>>b[i];
+    }
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(b[j]==a[i])
+            {
+                c[j]=i;
+            }
+        }
+    }
+    // for(i=0;i<n;i++)
+    // {
+    //     cout<<c[i]<<" "; //For displaying position
+    // }
+    int flag;
+    for(i=0;i<n;i++)
+    {
+        if(c[i]>c[i+1])
+        {
+            flag=1;
+            break;
+        }
+    }
+    if(flag==1)
+    {
+        cout<<"false"<<endl;
+    }
+    else
+    {
+        cout<<"true"<<endl;
+    }
+    return 0;
+}
